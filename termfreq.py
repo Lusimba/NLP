@@ -1,3 +1,4 @@
+#%%
 import nltk
 from nltk.probability import FreqDist
 from nltk.corpus import stopwords
@@ -39,6 +40,10 @@ table.add(WordList, Freq)
 data = pd.DataFrame(table)
 print (data)
 
+plt.plot(Freq)
+plt.ylabel("Word Frequency")
+plt.show()
+
 Normfreq=[]
 print("Normalized Outputs")
 for x,v in fDist.most_common(10):
@@ -47,5 +52,11 @@ for x,v in fDist.most_common(10):
 table.add(WordList, Normfreq)
 Normalized = pd.DataFrame(table)
 print(Normalized)
+
+
+plt.plot(Normfreq)
+plt.ylabel("Word Frequency")
+plt.xlabel("Word Series No.")
+plt.show()
 
 
